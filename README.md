@@ -35,7 +35,7 @@
    | **Component**  | **Supported**                                                                                       |
    |----------------|-----------------------------------------------------------------------------------------------------|
    | **CPU**        | Intel: Nehalem and Westmere (1st Gen) → Arrow Lake (15th Gen/Core Ultra Series 2) <br> AMD: Ryzen and Threadripper with [AMD Vanilla](https://github.com/AMD-OSX/AMD_Vanilla) |
-   | **GPU**        | Intel iGPU: Iron Lake (1st Gen) → Tiger Lake (11th Gen) <br> AMD APU: The entire Vega Raven ASIC family (Ryzen 1xxx → 5xxx, 7x30 series) <br> AMD dGPU: Navi 23, Navi 22, Navi 21 generations, and older series <br> NVIDIA: Kepler, Pascal, Maxwell, Fermi, Tesla generations |
+   | **GPU**        | Intel iGPU: Iron Lake (1st Gen) → Arrow Lake (15th Gen) <br> AMD APU: The entire Vega Raven ASIC family (Ryzen 1xxx → 5xxx, 7x30 series) <br> AMD dGPU: Navi 23, Navi 22, Navi 21 generations, and older series <br> NVIDIA: Tesla, Fermi, Kepler, Maxwell, Pascal, Volta, Turing , Ampere , Ada Lovelace , Blackwell generations |
    | **macOS**      | macOS High Sierra → macOS Tahoe |
 
 2. **ACPI Patches and Kexts**  
@@ -44,7 +44,7 @@
    - Integrated with [SSDTTime](https://github.com/corpnewt/SSDTTime) for common patches (e.g., FakeEC, FixHPET, PLUG, RTCAWAC).
    - Includes custom patches:
       - Prevent kernel panics by directing the first CPU entry to an active CPU, disabling the UNC0 device, and creating a new RTC device for HEDT systems.
-      - Disable unsupported or unused PCI devices, such as the GPU (using Optimus and Bumblebee methods or adding the disable-gpu property), Wi-Fi card, and NVMe storage controller.
+      - GPU patches (using null-moth NMXGPU), Wi-Fi card, and NVMe storage controller.
       - Fix sleep state values in _PRW methods (GPRW, UPRW, HP special) to prevent immediate wake.
       - Add devices including ALS0, BUS0, MCHC, PMCR, PNLF, RMNE, IMEI, USBX, XOSI, along with a Surface Patch.
       - Enable ALSD and GPI0 devices.
