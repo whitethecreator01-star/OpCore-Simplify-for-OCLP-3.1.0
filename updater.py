@@ -14,7 +14,6 @@ class Updater:
         self.utils = utils.Utils()
         self.sha_version = os.path.join(os.path.dirname(os.path.realpath(__file__)), "sha_version.txt")
         self.download_repo_urls = [
-            "https://github.com/lzhoang2801/OpCore-Simplify/archive/refs/heads/main.zip",
             "https://github.com/whitethecreator01-star/OpCore-Simplify-for-OCLP-3.1.0/archive/refs/heads/main.zip"
         ]
         self.download_repo_url = self.download_repo_urls[0]
